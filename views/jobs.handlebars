@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    {{!-- <div class="row">
         <div class="col-md">
             <legend>Job Postings</legend>
             <div id="job-posts">
@@ -38,7 +38,7 @@
                 </div>
                 {{/each}}
             </div>
-        </div>
+        </div> --}}
 
 
     </div>
@@ -98,7 +98,7 @@
 <script>
     $(document).ready(function () {
         // Getting references to our form and inputs
-        const postJob = $("job.job-post");
+        const postJob = $("form.job-post");
         const titleInput = $("input#title-input");
         const jobDescription = $("textarea#job-description");
         const jobTime = $("textarea#job-time");
@@ -110,10 +110,10 @@
         
 
         // When the form is submitted, we validate there's a title and body entered
-        postForm.on("submit", function (event) {
+        postJob.on("submit", function (event) {
             event.preventDefault();
-            console.log(bodyInput.val(), titleInput.val())
-            var postData = {
+            
+            let postData = {
                 title: titleInput.val().trim(),
                 description: jobDescription.val().trim(),
                 time: jobTime.val().trim(),
@@ -122,6 +122,7 @@
                 location: jobLocation.val().trim(),
                 experience: jobExperience.val().trim()
             };
+            console.log(postData)
 
             if (!postData.title || !postData.description || !postData.time || !postData.benefits || !postData.salary || !postData.location || !postData.experience) {
                 return;
@@ -129,7 +130,7 @@
 
 
             // If we have a title and password  we run the sendPost function and clear the form
-            sendPost(postData.title, postData.body);
+            sendPost(postData);
             titleInput.val("");
             jobDescription.val("");
             jobTime.val("");
@@ -139,17 +140,9 @@
             jobExperience.val("");
         });
 
-        // sendPost does a post to our "api/posts" route and if successful, redirects us the the forum page
-        function sendPost(title, body) {
-            $.post("/api/jobs", {
-                title: title,
-                description: description,
-                time: time,
-                benefits: benefits,
-                salary: salary,
-                location: location,
-                experience: experience
-            })
+        // sendPost does a post to our "api/jobs" route and if successful, redirects us the the jobs page
+        function sendPost(postData) {
+            $.post("/api/jobs", postData)
                 .then(function () {
                     window.location.replace("/jobs");
                     // If there's an error, log the error
