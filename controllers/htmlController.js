@@ -56,7 +56,11 @@ router.get("/jobs", function(req, res) {
 });
 
 router.get("/findjobs", function(req, res) {
-  res.render("findjobs", { user: req.user });
+  db.Jobs.findAll({ raw: true, include: [db.User] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
+  .then(dbModel => {
+    res.render("findjobs", { user: req.user, jobs: dbModel });
+  })
+  .catch(err => res.status(422).json(err));
 });
 
 /**

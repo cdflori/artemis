@@ -3,6 +3,7 @@ const apiRoutes = require("./api");
 const htmlRoutes = require("./htmlController");
 const authRoutes = require("./authController");
 
+
 // Auth Routes
 router.use("/auth", authRoutes);
 
