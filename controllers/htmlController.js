@@ -49,6 +49,17 @@ router.get("/login", function(req, res) {
 });
 
 /**
+ * Jobs Posting Page
+ */
+router.get("/jobs", function(req, res) {
+  res.render("jobs", { user: req.user });
+});
+
+router.get("/findjobs", function(req, res) {
+  res.render("findjobs", { user: req.user });
+});
+
+/**
  * Forum Page - 
  * Notice loading our posts, with that include!
  */
@@ -59,6 +70,8 @@ router.get("/forum", isAuthenticated, function(req, res) {
     })
     .catch(err => res.status(422).json(err));
 });
+
+
 
 /**
  * Generic Error Page
