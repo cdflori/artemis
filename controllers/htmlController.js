@@ -19,6 +19,13 @@ router.get("/home", function(req, res) {
   res.render("index", { user: req.user });
 });
 
+/**
+ * Mobile Main Page
+ */
+router.get("/mobile", function(req, res){
+  res.render("mobile", { user: req.user } );
+});
+
 /** 
  * Signup page
  */
