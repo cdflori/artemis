@@ -1,0 +1,57 @@
+
+<div class="container h-100">
+    <div class="row align-items-center max-width 50%">
+        <img src="/graphics/unleashlogo.png" class="img-fluid max-width: 50%" alt="Unleash Logo">
+    </div>
+        
+    <div class="row align-items-center h-100">
+     
+        <div class="card-body">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Explore</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Log In</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Getting references to our form and inputs
+        var loginForm = $("form.login");
+        var emailInput = $("input#email-input");
+        var passwordInput = $("input#password-input");
+
+        // When the form is submitted, we validate there's an email and password entered
+        loginForm.on("submit", function (event) {
+            event.preventDefault();
+            var userData = {
+                email: emailInput.val().trim(),
+                password: passwordInput.val().trim()
+            };
+
+            if (!userData.email || !userData.password) {
+                return;
+            }
+
+            // If we have an email and password we run the loginUser function and clear the form
+            loginUser(userData.email, userData.password);
+            emailInput.val("");
+            passwordInput.val("");
+        });
+
+        // loginUser does a post to our "auth/login" route and if successful, redirects us the the members page
+        function loginUser(email, password) {
+            $.post("/auth/login", {
+                email: email,
+                password: password
+            })
+                .then(function () {
+                    window.location.replace("/forum");
+                    // If there's an error, log the error
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    });
+</script>
