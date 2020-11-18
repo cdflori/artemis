@@ -48,6 +48,10 @@ router.get("/jobs", function(req, res) {
   res.render("jobs", { user: req.user });
 });
 
+router.get("/findjobs", function(req, res) {
+  res.render("findjobs", { user: req.user });
+});
+
 /**
  * Forum Page - 
  * Notice loading our posts, with that include!
