@@ -144,7 +144,7 @@
         function sendPost(postData) {
             $.post("/api/jobs", postData)
                 .then(function () {
-                    window.location.replace("/jobs");
+                    window.location.replace("/findjobs");
                     // If there's an error, log the error
                 })
                 .catch(function (err) {
