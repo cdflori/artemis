@@ -6,45 +6,43 @@
             <div class="text-center">
                 <img class="avatar" src="/graphics/ferret.png">
 
-                <h3 class="extra-margin">User Name</h3>
+                <h3 class="extra-margin">{{petName}}</h3>
                 <span style="font-size: 28px;">
-                    <a href="#" aria-label="Facebook Icon"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
+                    <a href={{facebook}} aria-label="Facebook Icon"><i class="fab fa-facebook fa-lg"
+                            aria-hidden="true"></i></a>
                 </span>
 
                 <span style="font-size: 28px;">
-                    <a href="#" aria-label="Twitter Icon"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+                    <a href={{twitter}} aria-label="Twitter Icon"><i class="fab fa-twitter fa-lg"
+                            aria-hidden="true"></i></a>
                 </span>
 
                 <span style="font-size: 28px;">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+                    <a href={{instagram}} aria-label="Instagram"><i class="fab fa-instagram fa-lg"
+                            aria-hidden="true"></i></a>
                 </span>
 
             </div>
         </div>
 
         <div class="col-md-8">
-            <h3 class="extra-margin"> About {{user}}</h2>
-                <p class="lead extra-margin">Bio about animal... Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit.
-                    Recusandae
-                    natus sed nesciunt qui velit, consequatur atque quae placeat totam quidem necessitatibus
-                    consequuntur ex
-                    accusantium reiciendis doloribus voluptas assumenda dicta laudantium?</p>
-
+            <h3 class="extra-margin"> About {{petName}}</h2>
+                <p class="lead extra-margin">{{bio}}</p>
                 <h3>Animal Type</h2>
-                    <p>Pecan is a ferret</p>
+                    <p>{{petName}} is a {{animalType}}</p>
+                    <p>{{animalBreed}}</p>
 
                     <h3>Koalafications</h2>
-                        <p>Pecan is an amazing pastry chef</p>
+                        <p>{{qualifications}}</p>
 
                         <h3>Personality</h2>
-                            <p>Super Sweet</p>
+                            <p>{{personality}}</p>
 
                             <div class="owner-info">
                                 <h3>Let's Connect</h3>
                                 <br>
-                                <h5>Owner Name: Test Name</h5>
-                                <h5>Email: ferret@happy.com</h5>
+                                <h5>Owner Name: {{ownerName}}</h5>
+                                <h5>Email: {{ownerEmail}}</h5>
                             </div>
 
 
