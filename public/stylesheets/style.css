@@ -37,3 +37,26 @@ footer {
   height:30px;
   background-image:url('/public/graphics/unleashlogo.png');
 }
+
+.extra-margin {
+  margin-top: 10px;
+}
+
+.fab {
+  color: teal
+}
+
+.owner-info {
+  background-color: #9fd7cd;
+  padding: 20px;
+  border-radius: 25px;
+  max-width: 450px;
+}
+
+.avatar {
+  border-radius: 50%;
+  
+  padding: 20px;
+  width: 250px;
+  height: 250px;
+}
