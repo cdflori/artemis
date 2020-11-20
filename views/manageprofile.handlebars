@@ -1,0 +1,139 @@
+{{> navbar user}}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md">
+            <div class="page-top-margin">
+                <form class="make-profile ">
+                    <fieldset>
+                        <legend>Update Your Profile</legend>
+                        <p>
+                            Fill out the form below to create your pet's profile. This profile is what employers will
+                            see
+                            when you apply for a job.</p>
+                        </p>
+                        <div class="form-group">
+                            <label for="pet-name">Pet Name</label>
+                            <br>
+                            <span>
+                                <input type="text" class="form-control" id="pet-name" name="petname"
+                                    placeholder="Enter Your Pet's Name">
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-description">Animal Type</label>
+                            <textarea class="form-control" id="job-description" name="description"
+                                placeholder="Enter Your Pet's Name"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="job-time">Age</label>
+                            <textarea class="form-control" id="job-time" name="time"
+                                placeholder="Is this job full-time, part-time, or one-time?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-benefits">Gender</label>
+                            <textarea class="form-control" id="job-benefits" name="benefits"
+                                placeholder="Enter a brief description of the benefits"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-salary">Personality</label>
+                            <textarea class="form-control" id="job-salary" name="salary"
+                                placeholder="Enter the job salary"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-location">Koalafications</label>
+                            <textarea class="form-control" id="job-location" name="location"
+                                placeholder="Where is this job?"></textarea>
+                        </div>
+
+                        <div>
+                            Avatar Selection
+                        </div>
+                        <div>Owner Information</div>
+                        <div class="form-group">
+                            <label for="job-experience">Owner's Name</label>
+                            <textarea class="form-control" id="job-experience" name="experience"
+                                placeholder="What experience would you like the canidate to have"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-experience">Owner's Email</label>
+                            <textarea class="form-control" id="job-experience" name="experience"
+                                placeholder="What experience would you like the canidate to have"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="job-experience">Owner's Name</label>
+                            <textarea class="form-control" id="job-experience" name="experience"
+                                placeholder="What experience would you like the canidate to have"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post Job!</button>
+                    </fieldset>
+                </form>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Getting references to our form and inputs
+        const makeProfile = $("form.make-profile");
+        const titleInput = $("input#title-input");
+        const jobDescription = $("textarea#job-description");
+        const jobTime = $("textarea#job-time");
+        const jobBenefits = $("textarea#job-benefits");
+        const jobSalary = $("textarea#job-salary");
+        const jobLocation = $("textarea#job-location");
+        const jobExperience = $("textarea#job-experience");
+
+
+
+        // When the form is submitted, we validate there's a title and body entered
+        makeProfile.on("submit", function (event) {
+            event.preventDefault();
+
+            let postData = {
+                title: titleInput.val().trim(),
+                description: jobDescription.val().trim(),
+                time: jobTime.val().trim(),
+                benefits: jobBenefits.val().trim(),
+                salary: jobSalary.val().trim(),
+                location: jobLocation.val().trim(),
+                experience: jobExperience.val().trim()
+            };
+            console.log(postData)
+
+            if (!postData.title || !postData.description || !postData.time || !postData.benefits || !postData.salary || !postData.location || !postData.experience) {
+                return;
+            }
+
+
+            // If we have a title and password  we run the sendPost function and clear the form
+            sendPost(postData);
+            titleInput.val("");
+            jobDescription.val("");
+            jobTime.val("");
+            jobBenefits.val("");
+            jobSalary.val("");
+            jobLocation.val("");
+            jobExperience.val("");
+        });
+
+        // sendPost does a post to our "api/jobs" route and if successful, redirects us the the jobs page
+        function sendPost(postData) {
+            $.post("/api/jobs", postData)
+                .then(function () {
+                    window.location.replace("/jobs");
+                    // If there's an error, log the error
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
+    });
+</script>
