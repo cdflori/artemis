@@ -77,6 +77,14 @@ router.get("/findjobs", function(req, res) {
   .catch(err => res.status(422).json(err));
 });
 
+router.get("/postlist", function(req, res) {
+  db.User.findOne({where: req.user.id}, {include: [db.Jobs]})
+  .then(dbModel => {
+    res.render("postlist", { user: req.user, jobs: dbModel });
+  })
+  .catch(err => res.status(422).json(err));
+});
+
 /**
  * Forum Page - 
  * Notice loading our posts, with that include!
