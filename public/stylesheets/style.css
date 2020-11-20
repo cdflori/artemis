@@ -60,3 +60,11 @@ footer {
   width: 250px;
   height: 250px;
 }
+
+.page-top-margin{
+  margin-top: 50px;
+}
+
+.form-group {
+  max-width: 800px;
+}

@@ -20,10 +20,17 @@ router.get("/home", function(req, res) {
 });
 
 /**
- * Home Page, again 
+ * Profile Page 
  */
 router.get("/profile", function(req, res) {
   res.render("profile", { user: req.user });
+});
+
+/**
+ * Manage Profile Page 
+ */
+router.get("/manageprofile", function(req, res) {
+  res.render("manageprofile", { user: req.user });
 });
 
 /**
