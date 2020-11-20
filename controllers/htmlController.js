@@ -81,7 +81,7 @@ router.get("/findjobs", function(req, res) {
  * Forum Page - 
  * Notice loading our posts, with that include!
  */
-router.get("/forum", isAuthenticated, function(req, res) {
+router.get("/flamingle", isAuthenticated, function(req, res) {
   db.Post.findAll({ raw: true, include: [db.User] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
     .then(dbModel => {
       res.render("forum", { user: req.user, posts: dbModel });
