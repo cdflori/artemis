@@ -68,3 +68,8 @@ footer {
 .form-group {
   max-width: 800px;
 }
+
+#dog {
+  max-width: 75%;
+}
+
