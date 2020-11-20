@@ -1,74 +1,98 @@
 {{> navbar user}}
 
-<div class="container">
+<div class="container bottom-padding">
 
     <div class="row">
         <div class="col-md">
             <div class="page-top-margin">
-                <form class="make-profile ">
+                <form class="update-profile ">
                     <fieldset>
-                        <legend>Update Your Profile</legend>
+                        <h4>Update Your Profile</h4>
                         <p>
                             Fill out the form below to create your pet's profile. This profile is what employers will
-                            see
-                            when you apply for a job.</p>
+                            see when you apply for a job.</p>
                         </p>
                         <div class="form-group">
                             <label for="pet-name">Pet Name</label>
-                            <br>
-                            <span>
-                                <input type="text" class="form-control" id="pet-name" name="petname"
-                                    placeholder="Enter Your Pet's Name">
-                            </span>
-                        </div>
-                        <div class="form-group">
-                            <label for="job-description">Animal Type</label>
-                            <textarea class="form-control" id="job-description" name="description"
-                                placeholder="Enter Your Pet's Name"></textarea>
+                            <input type="text" class="form-control" id="pet-name" name="petName"
+                                placeholder="Enter Your Pet's Name">
                         </div>
 
                         <div class="form-group">
-                            <label for="job-time">Age</label>
-                            <textarea class="form-control" id="job-time" name="time"
-                                placeholder="Is this job full-time, part-time, or one-time?"></textarea>
+                            <label for="pet-name">Pet Bio</label>
+                            <input type="text" class="form-control" id="pet-bio" name="petBio"
+                                placeholder="Enter a short bio for your pet">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="animal-type">Animal Type</label>
+                                <input class="form-control" id="animal-type" name="animalType"
+                                    placeholder="What type of animal is your pet."></input>
+                            </div>
+
+                            <div class="form-group col">
+                                <label for="animal-breed">Animal Breed</label>
+                                <input class="form-control" id="animal-breed" name="animalBreed"
+                                    placeholder="What is your pet's breed?"></input>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="age">Age</label>
+                                <input class="form-control" id="age" name="age"
+                                    placeholder="How old is your pet?"></input>
+                            </div>
+                            <div class="form-group col">
+                                <label for="gender">Gender</label>
+                                <input class="form-control" id="gender" name="gender"
+                                    placeholder="What is your pet's gender?"></input>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="job-benefits">Gender</label>
-                            <textarea class="form-control" id="job-benefits" name="benefits"
-                                placeholder="Enter a brief description of the benefits"></textarea>
+                            <label for="personality">Personality</label>
+                            <input class="form-control" id="personality" name="personality"
+                                placeholder="Describe your pet's personality."></input>
                         </div>
                         <div class="form-group">
-                            <label for="job-salary">Personality</label>
-                            <textarea class="form-control" id="job-salary" name="salary"
-                                placeholder="Enter the job salary"></textarea>
+                            <label for="qualifications">Koalafications</label>
+                            <input class="form-control" id="qualifications" name="qualifications"
+                                placeholder="What are your pet's koalafications and skills?"></input>
                         </div>
+
                         <div class="form-group">
-                            <label for="job-location">Koalafications</label>
-                            <textarea class="form-control" id="job-location" name="location"
-                                placeholder="Where is this job?"></textarea>
+                            <label for="social-link">Link Your Pet's Social Media</label>
+                            <input class="form-control" id="facebook-link" name="facebook"
+                                placeholder="Facebook Profile Link"></input>
+                            <br>
+                            <input class="form-control" id="twitter-link" name="twitter"
+                                placeholder="Twitter Profile Link"></input>
+                            <br>
+                            <input class="form-control" id="instagram-link" name="instagram"
+                                placeholder="Instagram Profile Link"></input>
                         </div>
 
                         <div>
                             Avatar Selection
                         </div>
-                        <div>Owner Information</div>
-                        <div class="form-group">
-                            <label for="job-experience">Owner's Name</label>
-                            <textarea class="form-control" id="job-experience" name="experience"
-                                placeholder="What experience would you like the canidate to have"></textarea>
+                        <div>
+                            <h4>Owner Information</h4>
                         </div>
-                        <div class="form-group">
-                            <label for="job-experience">Owner's Email</label>
-                            <textarea class="form-control" id="job-experience" name="experience"
-                                placeholder="What experience would you like the canidate to have"></textarea>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="owner-name">Name</label>
+                                <input class="form-control" id="owner-name" name="ownerName"
+                                    placeholder="Enter your name."></input>
+                            </div>
+                            <div class="form-group col">
+                                <label for="owner-email">Email</label>
+                                <input class="form-control" id="owner-email" name="ownerEmail"
+                                    placeholder="Enter your name."></input>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="job-experience">Owner's Name</label>
-                            <textarea class="form-control" id="job-experience" name="experience"
-                                placeholder="What experience would you like the canidate to have"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Post Job!</button>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
                     </fieldset>
                 </form>
             </div>
@@ -82,53 +106,73 @@
 <script>
     $(document).ready(function () {
         // Getting references to our form and inputs
-        const makeProfile = $("form.make-profile");
-        const titleInput = $("input#title-input");
-        const jobDescription = $("textarea#job-description");
-        const jobTime = $("textarea#job-time");
-        const jobBenefits = $("textarea#job-benefits");
-        const jobSalary = $("textarea#job-salary");
-        const jobLocation = $("textarea#job-location");
-        const jobExperience = $("textarea#job-experience");
+        const updateProfile = $("form.make-profile");
+        const petName = $("input#pet-name");
+        const petBio = $("input#pet-bio")
+        const animalType = $("input#animal-type");
+        const animalBreed = $("input#animal-breed");
+        const age = $("input#age");
+        const gender = $("input#gender");
+        const personality = $("input#personality");
+        const qualifications = $("input#qualifications");
+        const facebook = $("input#facebook-link");
+        const twitter = $("input#twitter-link");
+        const instagram = $("input#instagram-link");
+        const ownerName = $("input#owner-name");
+        const ownerEmail = $("input#owner-email");
 
 
 
         // When the form is submitted, we validate there's a title and body entered
-        makeProfile.on("submit", function (event) {
+        updateProfile.on("submit", function (event) {
             event.preventDefault();
 
             let postData = {
-                title: titleInput.val().trim(),
-                description: jobDescription.val().trim(),
-                time: jobTime.val().trim(),
-                benefits: jobBenefits.val().trim(),
-                salary: jobSalary.val().trim(),
-                location: jobLocation.val().trim(),
-                experience: jobExperience.val().trim()
+                petName: petName.val().trim(),
+                petBio: petBio.val().trim(),
+                animalType: animalType.val().trim(),
+                animalBreed: animalBreed.val().trim(),
+                age: age.val().trim(),
+                gender: gender.val().trim(),
+                personality: personality.val().trim(),
+                qualifications: qualifications.val().trim(),
+                facebook: facebook.val().trim(),
+                twitter: twitter.val().trim(),
+                instagram: instagram.val().trim(),
+                ownerName: ownerName.val().trim(),
+                ownerEmail: ownerEmail.val().trim(),
+
             };
             console.log(postData)
 
-            if (!postData.title || !postData.description || !postData.time || !postData.benefits || !postData.salary || !postData.location || !postData.experience) {
+            if (!postData.petName || !postData.animalType || !postData.animalBreed || !postData.age || !postData.gender || !postData.personality || !postData.qualifications || !postData.facebook || !postData.twitter || !postData.instagram || !postData.ownerName || !postData.ownerEmail) {
                 return;
             }
 
 
             // If we have a title and password  we run the sendPost function and clear the form
             sendPost(postData);
-            titleInput.val("");
-            jobDescription.val("");
-            jobTime.val("");
-            jobBenefits.val("");
-            jobSalary.val("");
-            jobLocation.val("");
-            jobExperience.val("");
+            petName.val("");
+            petBio.val("");
+            animalType.val("");
+            animalBreed.val("");
+            age.val("");
+            gender.val("");
+            personality.val("");
+            qualifications.val("");
+            facebook.val("");
+            twitter.val("");
+            instagram.val("");
+            ownerName.val("");
+            ownerEmail.val("");
+
         });
 
-        // sendPost does a post to our "api/jobs" route and if successful, redirects us the the jobs page
+        // sendPost does a post to our "api/profile" route and if successful, redirects us the the jobs page
         function sendPost(postData) {
-            $.post("/api/jobs", postData)
+            $.post("/api/profile", postData)
                 .then(function () {
-                    window.location.replace("/jobs");
+                    window.location.replace("/profile");
                     // If there's an error, log the error
                 })
                 .catch(function (err) {

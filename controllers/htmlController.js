@@ -23,7 +23,11 @@ router.get("/home", function(req, res) {
  * Profile Page 
  */
 router.get("/profile", function(req, res) {
-  res.render("profile", { user: req.user });
+  db.Profile.findAll({ raw: true, include: [db.Profile] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
+  .then(dbModel => {
+    res.render("profile", { user: req.user, profile: dbModel });
+  })
+  .catch(err => res.status(422).json(err));
 });
 
 /**

@@ -68,3 +68,7 @@ footer {
 .form-group {
   max-width: 800px;
 }
+
+.bottom-padding {
+  padding-bottom: 200px;
+}
