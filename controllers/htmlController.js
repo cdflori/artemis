@@ -81,11 +81,19 @@ router.get("/findjobs", function(req, res) {
   .catch(err => res.status(422).json(err));
 });
 
+router.get("/postlist", function(req, res) {
+  db.User.findOne({where: req.user.id}, {include: [db.Jobs]})
+  .then(dbModel => {
+    res.render("postlist", { user: req.user, jobs: dbModel });
+  })
+  .catch(err => res.status(422).json(err));
+});
+
 /**
  * Forum Page - 
  * Notice loading our posts, with that include!
  */
-router.get("/forum", isAuthenticated, function(req, res) {
+router.get("/flamingle", isAuthenticated, function(req, res) {
   db.Post.findAll({ raw: true, include: [db.User] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
     .then(dbModel => {
       res.render("forum", { user: req.user, posts: dbModel });

@@ -11,7 +11,7 @@
     {{!-- <div class="row">
         <div class="col-md">
             <legend>Job Postings</legend>
-            <div id="job-posts">
+            <div id="forum-posts">
                 {{#each posts}}
                 <div class="job-post-card card text-white bg-primary mb-3">
                     <div class="card-header">
@@ -91,9 +91,11 @@
                 </fieldset>
             </form>
             <br />
+
         </div>
     </div>
 </div>
+
 
 <script>
     $(document).ready(function () {
@@ -107,12 +109,12 @@
         const jobLocation = $("textarea#job-location");
         const jobExperience = $("textarea#job-experience");
 
-        
+
 
         // When the form is submitted, we validate there's a title and body entered
         postJob.on("submit", function (event) {
             event.preventDefault();
-            
+
             let postData = {
                 title: titleInput.val().trim(),
                 description: jobDescription.val().trim(),
