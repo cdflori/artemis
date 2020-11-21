@@ -24,12 +24,12 @@ router.get("/home", function (req, res) {
  */
 router.get("/profile", function (req, res) {
   if (req.user) {
-    db.Profile.findOne({ raw: true, where: { UserId: req.user.id } }) // Joins User to Posts! And scrapes all the seqeulize stuff off
-      .then(dbModel => {
-        console.log(dbModel)
-        res.render("profile", { user: req.user, profile: dbModel });
-      })
-      .catch(err => res.status(422).json(err));
+    db.Profile.findAll({ raw: true, include: [db.Profile] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
+    .then(dbModel => {
+
+      res.render("profile", { user: req.user, profile: dbModel });
+    })
+    .catch(err => res.status(422).json(err));
   }
   else {
     res.redirect("/signup")
@@ -110,17 +110,20 @@ router.get("/findjobs", function (req, res) {
 });
 
 router.get("/postlist", function (req, res) {
+
   if (req.user) {
-    db.Jobs.findAll({ where: { UserId: req.user.id }, raw: true, include: [] })
-      .then(dbModel => {
-        res.render("postlist", { user: req.user, jobs: dbModel });
-        console.log(dbModel);
-      })
-      .catch(err => res.status(422).json(err));
+    db.Jobs.findAll({ where: { UserId: req.user.id } , raw: true, include: [] })
+    .then(dbModel => {
+      res.render("postlist", { user: req.user, jobs: dbModel });
+      console.log(dbModel);
+
+    })
+    .catch(err => res.status(422).json(err));
   }
   else {
     res.redirect("/signup")
   }
+
 });
 
 /**
