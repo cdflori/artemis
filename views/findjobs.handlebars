@@ -1,12 +1,18 @@
 {{> navbar user}}
 
 <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Job Postings</h1>
+            <p>Click <a href="/postlist">here</a> to view your job postings</p>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md">
-            <legend>Job Postings</legend>
+
             <div id="job-posts">
                 {{#each jobs}}
-                <div class="job-post-card card text-white bg-primary mb-3">
+                <div class="job-post-card card text-white bg-dark mb-3">
                     <div class="card-header">
                         <h4 class="text-white">{{title}}</h4>
                         <br>
@@ -26,7 +32,6 @@
                 
             </div>
         </div>
-
 </div>
 
 <script>
