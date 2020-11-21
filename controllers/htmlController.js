@@ -39,6 +39,13 @@ router.get("/manageprofile", function (req, res) {
 });
 
 /**
+ * Manage Profile Page 
+ */
+router.get("/about", function (req, res) {
+  res.render("about", { user: req.user });
+});
+
+/**
  * Mobile Main Page
  */
 router.get("/mobile", function (req, res) {
@@ -50,7 +57,7 @@ router.get("/mobile", function (req, res) {
  */
 router.get("/signup", function (req, res) {
   if (req.user) {
-    res.redirect("/");
+    res.redirect("/manageprofile");
   } else {
     res.render("signup", { user: req.user });
   }
