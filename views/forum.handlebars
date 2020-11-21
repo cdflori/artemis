@@ -8,21 +8,24 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md">
             <legend>Flamingle Posts</legend>
             <div id="forum-posts">
-            {{#each posts}}
-            <div class="forum-post-card card text-white bg-primary mb-3">
-                <div class="card-header"><h4 class="text-white">{{title}}</h4></div>
-                <div class="card-body">
-                    <p class="card-text">{{body}}</p>
-                    <p class="card-text">{{tag}}</p>
-                    by {{'User.email'}}
-                    @ {{createdAt}}
+                {{#each posts}}
+                <div class="forum-post-card card text-white bg-primary mb-3">
+                    <div class="card-header">
+                        <h4 class="text-white">{{title}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{body}}</p>
+                        <p class="card-text">{{tag}}</p>
+                        by {{'User.email'}}
+                        @ {{createdAt}}
+                    </div>
                 </div>
-            </div>
-            {{/each}}
+                {{/each}}
             </div>
         </div>
 
@@ -72,7 +75,7 @@
         // When the form is submitted, we validate there's a title and body entered
         postForm.on("submit", function (event) {
             event.preventDefault();
-            
+
             let postData = {
                 title: titleInput.val().trim(),
                 body: bodyInput.val().trim(),
