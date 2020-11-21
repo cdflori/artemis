@@ -71,7 +71,9 @@ footer {
 
 
 #dog {
-  max-width: 75%;
+  text-align: center;
+  width: 360px;
+  height: 253px;
 }
 
 
@@ -79,3 +81,63 @@ footer {
   padding: 20px
 }
 
+.home-btn {
+  background-color: #9fd7cd;
+  padding: 18px;
+  padding-top: 28px;
+  border-radius: 15px;
+  max-width: 950px;
+  margin-bottom: 10px;
+  
+}
+
+.btn:hover{
+  background:#01796F;
+
+}
+
+.bottom-margin {
+  margin-bottom: 20px;
+}
+
+
+.mid-page {
+    background-color: rgb(237, 237, 237);
+    padding: 30px;
+}
+
+.flamingle{ 
+	background-image: url("/graphics/flaminglehero.png"); 
+	background-size: cover; 
+  background-repeat: no-repeat; 
+  margin-top: 20px;
+} 
+
+.hero-text {
+  color: white;
+  font-size: 38pt;
+  font-weight: bolder;
+}
+
+.flamingle-text {
+  color: white;
+  font-size: 15pt;
+}
+
+.flamingle-btn {
+  background-color:#9fd7cd;
+  padding: 18px;
+  padding-top: 28px;
+  border-radius: 15px;
+  max-width: 450px;
+  margin-bottom: 10px;
+}
+
+.flamingle-btn:hover{
+  background:#c5ebe4;
+
+}
+
+.padding-bottom {
+  padding-bottom: 100px;
+}
