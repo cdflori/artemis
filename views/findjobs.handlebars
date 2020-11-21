@@ -9,28 +9,31 @@
                 <div class="job-post-card card text-white bg-primary mb-3">
                     <div class="card-header">
                         <h4 class="text-white">{{title}}</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{description}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{time}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{benefits}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{salary}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{location}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{experience}}</p>
+                        <br>
+                        <p class="card-text extra-margin">{{description}}</p>
+                        <p class="card-text extra-margin">{{time}}</p>
+                        <p class="card-text extra-margin">{{benefits}}</p>
+                        <p class="card-text extra-margin">{{salary}}</p>
+                        <p class="card-text extra-margin">{{location}}</p>
+                        <p class="card-text extra-margin">{{experience}}</p>
+                    
+                    <div>
+                        <button type="submit" class="btn btn-primary">Apply</button>
                     </div>
                 </div>
                 {{/each}}
+
+                
             </div>
         </div>
 
 </div>
+
+<script>
+$(document).ready(function () {
+    const apply = $("form.update-profile");
+}
+updateProfile.on("submit", function (event) {
+            event.preventDefault();
+
+</script>
