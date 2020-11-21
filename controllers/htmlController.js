@@ -98,9 +98,13 @@ router.get("/jobs", function (req, res) {
 
 router.get("/findjobs", function (req, res) {
   if (req.user) {
-    db.Jobs.findAll({ raw: true, include: [db.User] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
-      .then(dbModel => {
-        res.render("findjobs", { user: req.user, jobs: dbModel });
+    Promise.all([
+      db.Jobs.findAll({ raw: true, include: [db.User] }), 
+      db.Profile.findOne({where: {UserId: req.user.id}, raw: true})
+    ])
+      .then(([jobs, profile]) => {
+        console.log(profile)
+        res.render("findjobs", { user: req.user, jobs, profile });
       })
       .catch(err => res.status(422).json(err));
   }
@@ -125,6 +129,21 @@ router.get("/postlist", function (req, res) {
   }
 
 });
+
+router.get("/viewpost/:id", function (req, res){
+  if (req.user) {
+    Promise.all([
+      db.Jobs.findOne({ raw: true, include: [db.User], where: {id: req.params.id}}), 
+      db.Applicants.findAll({where: {JobId: req.params.id}, include: [db.Profile], raw: true })
+    ]).then (function([job, applicants]){
+      console.log(applicants)
+      res.render("viewpost", { user: req.user, job, applicants });
+    })
+  }
+  else {
+    res.redirect("/signup")
+  }
+})
 
 /**
  * Forum Page - 

@@ -8,32 +8,40 @@
                 {{#each jobs}}
                 <div class="job-post-card card text-white bg-primary mb-3">
                     <div class="card-header">
-                        <h4 class="text-white">{{title}}</h4>
+                        <h4 class="text-white">{{this.title}}</h4>
                         <br>
-                        <p class="card-text extra-margin">{{description}}</p>
-                        <p class="card-text extra-margin">{{time}}</p>
-                        <p class="card-text extra-margin">{{benefits}}</p>
-                        <p class="card-text extra-margin">{{salary}}</p>
-                        <p class="card-text extra-margin">{{location}}</p>
-                        <p class="card-text extra-margin">{{experience}}</p>
-                    
-                    <div>
-                        <button type="submit" class="btn btn-primary">Apply</button>
-                    </div>
-                </div>
-                {{/each}}
+                        <p class="card-text extra-margin">{{this.description}}</p>
+                        <p class="card-text extra-margin">{{this.time}}</p>
+                        <p class="card-text extra-margin">{{this.benefits}}</p>
+                        <p class="card-text extra-margin">{{this.salary}}</p>
+                        <p class="card-text extra-margin">{{this.location}}</p>
+                        <p class="card-text extra-margin">{{this.experience}}</p>
 
-                
+                        <div>
+                            {{log this}}<button type="submit" class="btn btn-primary update-profile" data-id="{{id}}"
+                                data-profile-id="{{@root.profile.id}}">Apply</button>
+                        </div>
+                        
+                    </div>
+                    {{/each}}
+
+
+                </div>
             </div>
+
         </div>
 
-</div>
+        <script>
+            $(document).ready(function () {
+                const apply = $("button.update-profile");
 
-<script>
-$(document).ready(function () {
-    const apply = $("form.update-profile");
-}
-updateProfile.on("submit", function (event) {
-            event.preventDefault();
+                apply.on("click", function (event) {
+                    event.preventDefault();
 
-</script>
+                    const jobId = $(this).attr("data-id")
+                    const profileId = $(this).attr("data-profile-id")
+                    $.post({ url: "/api/applicants/apply", data: { jobId, profileId } })
+                });
+            });
+
+        </script>
