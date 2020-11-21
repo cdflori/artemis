@@ -23,9 +23,10 @@ router.get("/home", function (req, res) {
  * Profile Page 
  */
 router.get("/profile", function (req, res) {
-  db.Profile.findOne({ raw: true, where: { UserId: req.user.id } }) // Joins User to Posts! And scrapes all the seqeulize stuff off
+
+  db.Profile.findAll({ raw: true, include: [db.Profile] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
     .then(dbModel => {
-      console.log(dbModel)
+
       res.render("profile", { user: req.user, profile: dbModel });
     })
     .catch(err => res.status(422).json(err));
@@ -90,9 +91,12 @@ router.get("/findjobs", function (req, res) {
 });
 
 router.get("/postlist", function (req, res) {
-  db.User.findOne({ where: req.user.id }, { include: [db.Jobs] })
+
+  db.Jobs.findAll({ where: { UserId: req.user.id } , raw: true, include: [] })
     .then(dbModel => {
       res.render("postlist", { user: req.user, jobs: dbModel });
+      console.log(dbModel);
+
     })
     .catch(err => res.status(422).json(err));
 });
