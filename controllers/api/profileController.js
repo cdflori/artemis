@@ -14,7 +14,8 @@ router.get("/:id", function(req, res) {
   });
 
 router.post("/", function(req, res) {
-    db.Profile.create({
+  console.log(req)  
+  db.Profile.create({
       UserId: req.user.id,
       ...req.body
     })

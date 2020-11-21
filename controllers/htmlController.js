@@ -23,8 +23,10 @@ router.get("/home", function (req, res) {
  * Profile Page 
  */
 router.get("/profile", function (req, res) {
+
   db.Profile.findAll({ raw: true, include: [db.Profile] }) // Joins User to Posts! And scrapes all the seqeulize stuff off
     .then(dbModel => {
+
       res.render("profile", { user: req.user, profile: dbModel });
     })
     .catch(err => res.status(422).json(err));
@@ -35,6 +37,13 @@ router.get("/profile", function (req, res) {
  */
 router.get("/manageprofile", function (req, res) {
   res.render("manageprofile", { user: req.user });
+});
+
+/**
+ * Manage Profile Page 
+ */
+router.get("/about", function (req, res) {
+  res.render("about", { user: req.user });
 });
 
 /**
@@ -49,7 +58,7 @@ router.get("/mobile", function (req, res) {
  */
 router.get("/signup", function (req, res) {
   if (req.user) {
-    res.redirect("/");
+    res.redirect("/manageprofile");
   } else {
     res.render("signup", { user: req.user });
   }
@@ -82,10 +91,12 @@ router.get("/findjobs", function (req, res) {
 });
 
 router.get("/postlist", function (req, res) {
+
   db.Jobs.findAll({ where: { UserId: req.user.id } , raw: true, include: [] })
     .then(dbModel => {
       res.render("postlist", { user: req.user, jobs: dbModel });
       console.log(dbModel);
+
     })
     .catch(err => res.status(422).json(err));
 });
