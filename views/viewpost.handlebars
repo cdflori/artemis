@@ -5,7 +5,7 @@
         <div class="col-md" id="userposts">
             <legend>Job Postings</legend>
             <div id="job-posts">
-                {{#each jobs}}
+                {{#with job}}
                 <div class="job-post-card card text-white bg-primary mb-3">
                     <div class="card-header">
                         <h4 class="text-white">{{title}}</h4>
@@ -28,12 +28,14 @@
                     <div class="card-body">
                         <p class="card-text">{{experience}}</p>
                     </div>
-                    <a href="/viewpost/{{id}}">View Post</a>
                 </div>
-                {{/each}}
+                {{/with}}
             </div>
-
-
+            {{#each applicants}}
+            <div>
+                {{"Profile.petName"}}
+            </div>
+            {{/each}}
 
         </div>
 
