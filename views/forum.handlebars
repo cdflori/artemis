@@ -1,22 +1,27 @@
 {{> navbar user}}
 
 <div class="container">
-    <div class="row">
-        <div class="col-md">
-            <div class="jumbotron">
-                <h4 class="display-6">Hello, {{user.email}}!</h4>
-            </div>
-        </div>
+    <div class="jumbotron extra-margin flamingle">
+        <h1 class="display-4 hero-text">Flamingle with other <br> hard working pets</h1>
+        <br>
+        <span>
+            <a class="btn btn-lg flamingle-btn" id="push" href="#post">
+                <h4 class="home-btn-text">Create Post</h4>
+            </a>
+            <a class="btn btn-lg flamingle-btn" id="push" href="#posts">
+                <h4 class="home-btn-text">View Posts</h4>
+            </a>
+        </span>
     </div>
 
     <div class="row">
         <div class="col-md">
-            <legend>Flamingle Posts</legend>
+            <legend id="posts">Furriends Posts</legend>
             <div id="forum-posts">
                 {{#each posts}}
-                <div class="forum-post-card card text-white bg-primary mb-3">
+                <div class="forum-post-card card text-white bg-dark mb-3">
                     <div class="card-header">
-                        <h4 class="text-white">{{title}}</h4>
+                        <h4 class="card-title">{{title}}</h4>
                     </div>
                     <div class="card-body">
                         <p class="card-text">{{body}}</p>
@@ -28,13 +33,11 @@
                 {{/each}}
             </div>
         </div>
-
-
     </div>
 
     <div class="row">
         <div class="col-md">
-            <form class="forum-post">
+            <form class="forum-post" id="post">
                 <fieldset>
                     <legend>Create Your Post</legend>
                     <p>
@@ -56,12 +59,13 @@
                         <textarea class="form-control" id="tag-input" name="tag"
                             placeholder="Enter tags for your post"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Post!</button>
+                    <button type="submit" class="btn btn-dark">Post!</button>
                 </fieldset>
             </form>
             <br />
         </div>
     </div>
+
 </div>
 
 <script>
