@@ -141,3 +141,8 @@ footer {
 .padding-bottom {
   padding-bottom: 100px;
 }
+
+.avatar {
+  max-width: 200px;
+  max-height: 200px;
+}

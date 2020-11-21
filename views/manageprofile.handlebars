@@ -74,7 +74,68 @@
                         </div>
 
                         <div>
-                            Avatar Selection
+                            <h4>Select Your Profile Avatar</h4>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/dog.png">
+                                            <img src="/graphics/dog.png" alt="dog avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/ferret.png">
+                                            <img src="/graphics/ferret.png" alt="ferret avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/seal.png">
+                                            <img src="/graphics/seal.png" alt="seal avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/bird.png">
+                                            <img src="/graphics/bird.png" alt="bird avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/lizard.png">
+                                            <img src="/graphics/lizard.png" alt="lizard avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/cow.png">
+                                            <img src="/graphics/cow.png" alt="cow avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/cat.png">
+                                            <img src="/graphics/cat.png" alt="cat avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail avatar">
+                                        <button class="avatar-img" data-avatar="/graphics/fish.png">
+                                            <img src="/graphics/fish.png" alt="fish avatar" style="width:100%">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <h4>Owner Information</h4>
@@ -104,6 +165,8 @@
 
 
 <script>
+
+
     $(document).ready(function () {
         // Getting references to our form and inputs
         const updateProfile = $("form.update-profile");
@@ -120,6 +183,15 @@
         const instagram = $("input#instagram-link");
         const ownerName = $("input#owner-name");
         const ownerEmail = $("input#owner-email");
+        const avatarBtn = $("button.avatar-img");
+        let userAvatar = "/graphics/ferret.png";
+
+        avatarBtn.on("click", function (event) {
+            event.preventDefault();
+
+            const avatarImg = $(this).attr("data-avatar")
+            userAvatar = avatarImg;
+        });
 
 
 
@@ -141,6 +213,7 @@
                 instagram: instagram.val().trim(),
                 ownerName: ownerName.val().trim(),
                 ownerEmail: ownerEmail.val().trim(),
+                avatar: userAvatar
 
             };
             console.log(postData)
