@@ -11,59 +11,95 @@
 
 
     <div class="row" id="home">
-        <h2 class="display-6">Unleash Your Pets Paw-Tential</h2>
+        {{!-- <h2 class="display-6">Unleash Your Pets Paw-Tential</h2> --}}
     </div>
     <div class="row" id="home">
-        <div class="col-md">
-            <a class="btn btn-lg" id="push" href="/findjobs">Find a Job</a>
-            <br>
-            <a class="btn btn-lg" id="push" href="/flamingle">Find a Pet You Know</a>
-            <br>
-            <a class="btn btn-lg" id="push" href="/about">Read Our Success Stories</a>
-            <br>
+        <div class="col-md-5 bottom-margin">
+            <img src="/graphics/frenchiemayor2.png" class="mx-auto d-block" id="dog" alt="dog">
         </div>
-        <div class="col-md">
-            <img src="https://i.imgur.com/HKwSBtN.png" class="rounded align-self-center" id="dog" alt="dog">
-        </div>
-    </div>
-    <div class="row" id="home">
-        <h2 class="display-6">Let Your Pet Work Hard So You Don't Have To</h2>
-    </div>
-    <div class="row">
-        <div class="col" id="home">
-            <div class="card mb-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Station-Master_Tama_20071120.jpg"
-                    class="card-img-top" alt="Tama">
-                <div class="card-body">
-                    <h5 class="card-title">Tama the Train Station Master</h5>
-                    <p class="card-text">Station master and operating officer at Kishi Station on the Kishigawa Line in
-                        Kinokawa, Wakayama Prefecture, Japan. </p>
-                </div>
-            </div>
-        </div>
-        <div class="col" id="home">
-            <div class="card mb-3">
-                <img src="https://i.pinimg.com/originals/06/64/f6/0664f62dcc29ad0b0d63a824f40a8cf2.jpg"
-                    class="card-img-top" alt="ferret">
-                <div class="card-body">
-                    <h5 class="card-title">Pecan and Clarisse</h5>
-                    <p class="card-text">Pecan and Clarisse got a job with Boeing stringing wires through aeroplanes,
-                        and also ran cables at Buckingham Palace for the wedding of Prince Charles and Princess Diana!
-                    </p>
+        <br>
+        <div class="col-md-7">
+            <span>
+                <a class="btn btn-lg btn-block home-btn" id="push" href="/findjobs">
+                    <h4 class="home-btn-text">Find A Job</h4>
+                </a>
+            </span>
 
+            <span>
+                <a class="btn btn-lg btn-block home-btn" id="push" href="/flamingle">
+                    <h4 class="home-btn-text">Find A Pet You Know</h4>
+                </a>
+            </span>
+
+            <span>
+                <a class="btn btn-lg btn-block home-btn" id="push" href="/about">
+                    <h4 class="home-btn-text">Post A Job</h4>
+                </a>
+            </span>
+
+        </div>
+    </div>
+</div>
+
+<div class="mid-page">
+    <div class="container">
+        <div class="row" id="home">
+            <h2 class="display-6">Let Your Pet Work Hard So You Don't Have To</h2>
+        </div>
+        <div class="row card-columns">
+            <div class="col" id="home">
+                <div class="card mb-3">
+                    <img src="/graphics/tamacat.png"
+                        class="card-img-top" alt="Tama">
+                    <div class="card-body">
+                        <h5 class="card-title">Tama Train Station Master</h5>
+                        <p class="card-text">Station master and operating officer at Kishi Station on the Kishigawa Line
+                            in
+                            Kinokawa, Wakayama Prefecture, Japan. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="home">
+                <div class="card mb-3">
+                    <img src="/graphics/pecanandclarisse.png"
+                        class="card-img-top" alt="ferret">
+                    <div class="card-body">
+                        <h5 class="card-title">Pecan and Clarisse</h5>
+                        <p class="card-text">Pecan and Clarisse got a job with Boeing stringing wires through
+                            aeroplanes,
+                            and also ran cables at Buckingham Palace for the wedding of Prince Charles and Princess
+                            Diana!
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="home">
+                <div class="card mb-3">
+                    <img src="/graphics/horacerat.png"
+                        class="card-img-top" alt="rat">
+                    <div class="card-body">
+                        <h5 class="card-title">Horace the Rat</h5>
+                        <p class="card-text">Specialty training in detecting Tuberculosis better than any testing
+                            available
+                            on the market. I am typing in more text, so that these cards will be evenly spaced.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col" id="home">
-            <div class="card mb-3">
-                <img src="https://lh3.googleusercontent.com/proxy/aqkCEwBBrJHhYqBrI7h2ULC-vLI30eiCYNBa_LSLkETyvI-LBG_erhBAfuGtzFM_KHaqSepf95IwNy8VJARrHGOXh-4WbDJgT_GZ4tv8m_EJWeeg6k9CSsPlgv2_YhblqGL_IpQP"
-                    class="card-img-top" alt="rat">
-                <div class="card-body">
-                    <h5 class="card-title">Horace the Rat</h5>
-                    <p class="card-text">Specialty training in detecting Tuberculosis better than any testing available
-                        on the market</p>
-                </div>
-            </div>
-        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="jumbotron extra-margin flamingle">
+        <h1 class="display-4 hero-text">Ready to Flamingle?</h1>
+        <p class="lead flamingle-text">Join the community of hard working pets!</p>
+        <br>
+        <span>
+                <a class="btn btn-lg flamingle-btn" id="push" href="/flamingle">
+                    <h4 class="home-btn-text">Connect With Other Pets</h4>
+                </a>
+            </span>
     </div>
 </div>
