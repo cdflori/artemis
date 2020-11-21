@@ -6,19 +6,19 @@
             <div class="text-center">
                 <img class="avatar" src="/graphics/ferret.png">
 
-                <h3 class="extra-margin">{{petName}}</h3>
+                <h3 class="extra-margin">{{profile.petName}}</h3>
                 <span style="font-size: 28px;">
-                    <a href={{facebook}} aria-label="Facebook Icon"><i class="fab fa-facebook fa-lg"
+                    <a href="{{profile.facebook}}" aria-label="Facebook Icon"><i class="fab fa-facebook fa-lg"
                             aria-hidden="true"></i></a>
                 </span>
 
                 <span style="font-size: 28px;">
-                    <a href={{twitter}} aria-label="Twitter Icon"><i class="fab fa-twitter fa-lg"
+                    <a href="{{profile.twitter}}" aria-label="Twitter Icon"><i class="fab fa-twitter fa-lg"
                             aria-hidden="true"></i></a>
                 </span>
 
                 <span style="font-size: 28px;">
-                    <a href={{instagram}} aria-label="Instagram"><i class="fab fa-instagram fa-lg"
+                    <a href="{{profile.instagram}}" aria-label="Instagram"><i class="fab fa-instagram fa-lg"
                             aria-hidden="true"></i></a>
                 </span>
 
@@ -26,23 +26,23 @@
         </div>
 
         <div class="col-md-8">
-            <h3 class="extra-margin"> About {{petName}}</h2>
+            <h3 class="extra-margin"> About {{profile.petName}}</h2>
                 <p class="lead extra-margin">{{bio}}</p>
                 <h3>Animal Type</h2>
-                    <p>{{petName}} is a {{animalType}}</p>
-                    <p>{{animalBreed}}</p>
+                    <p>{{profile.petName}} is a {{animalType}}</p>
+                    <p>{{profile.animalBreed}}</p>
 
                     <h3>Koalafications</h2>
-                        <p>{{qualifications}}</p>
+                        <p>{{profile.qualifications}}</p>
 
                         <h3>Personality</h2>
-                            <p>{{personality}}</p>
+                            <p>{{profile.personality}}</p>
 
                             <div class="owner-info">
                                 <h3>Let's Connect</h3>
                                 <br>
-                                <h5>Owner Name: {{ownerName}}</h5>
-                                <h5>Email: {{ownerEmail}}</h5>
+                                <h5>Owner Name: {{profile.ownerName}}</h5>
+                                <h5>Email: {{profile.ownerEmail}}</h5>
                             </div>
 
 
