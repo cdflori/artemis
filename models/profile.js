@@ -5,6 +5,11 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         len: [1]
       },
+      petBio: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        len: [1]
+      },
       animalType: {
         type: DataTypes.TEXT,
         allowNull: false,

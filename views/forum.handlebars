@@ -5,10 +5,10 @@
         <h1 class="display-4 hero-text">Flamingle with other <br> hard working pets</h1>
         <br>
         <span>
-            <a class="btn btn-lg flamingle-btn" id="push" href="#post">
+            <a class="btn flamingle-btn" id="push" href="#post">
                 <h4 class="home-btn-text">Create Post</h4>
             </a>
-            <a class="btn btn-lg flamingle-btn" id="push" href="#posts">
+            <a class="btn flamingle-btn" id="push" href="#posts">
                 <h4 class="home-btn-text">View Posts</h4>
             </a>
         </span>
@@ -19,23 +19,23 @@
             <legend id="posts">Furriends Posts</legend>
             <div id="forum-posts">
                 {{#each posts}}
-                <div class="forum-post-card card text-white bg-dark mb-3">
+                <div class="forum-post-card card text-gray mb-3 shadow rounded">
                     <div class="card-header">
-                        <h4 class="card-title">{{title}}</h4>
-                    </div>
-                    <div class="card-body">
+                        <h4 class="card-title extra-margin furriend-text">{{title}}</h4>
+                        <br>
                         <p class="card-text">{{body}}</p>
                         <p class="card-text">{{tag}}</p>
                         by {{'User.email'}}
                         @ {{createdAt}}
                     </div>
+                    
                 </div>
                 {{/each}}
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row extra-margin">
         <div class="col-md">
             <form class="forum-post" id="post">
                 <fieldset>
@@ -59,7 +59,7 @@
                         <textarea class="form-control" id="tag-input" name="tag"
                             placeholder="Enter tags for your post"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-dark">Post!</button>
+                    <button type="submit" class="btn forum-post-btn btn-block">Post!</button>
                 </fieldset>
             </form>
             <br />

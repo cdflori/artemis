@@ -48,6 +48,9 @@ router.get("/manageprofile", function (req, res) {
   }
 });
 
+router.get("/test", function (req, res) {
+  res.render("test", { user: req.user });
+});
 /**
  * About Us Page
  */
@@ -170,5 +173,7 @@ router.get("/flamingle", function (req, res) {
 router.get("*", function (req, res) {
   res.render("errors/404", { user: req.user });
 });
+
+
 
 module.exports = router;

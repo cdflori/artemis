@@ -1,7 +1,7 @@
 {{> navbar user}}
 
 <div class="container">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron  find-job-jumbotron">
         <div class="container">
             <h1 class="display-4">Job Postings</h1>
             <p>Click <a href="/postlist">here</a> to view your job postings</p>
@@ -12,25 +12,32 @@
 
             <div id="job-posts">
                 {{#each jobs}}
-                <div class="job-post-card card text-white bg-dark mb-3">
+                <div class="job-post-card card text-gray mb-3 shadow rounded">
                     <div class="card-header">
-                        <h4 class="text-white">{{this.title}}</h4>
+                        <h3 class="job-post-text extra-margin">{{this.title}}</h3>
                         <br>
+                        <h5>Job Description</h5>
                         <p class="card-text extra-margin">{{this.description}}</p>
+                        <h5>Time Commitment</h5>
                         <p class="card-text extra-margin">{{this.time}}</p>
+                        <h5>Benefits Provided</h5>
                         <p class="card-text extra-margin">{{this.benefits}}</p>
+                        <h5>Salary</h5>
                         <p class="card-text extra-margin">{{this.salary}}</p>
+                        <h5>Location</h5>
                         <p class="card-text extra-margin">{{this.location}}</p>
+                        <h5>Koalafications Needed</h5>
                         <p class="card-text extra-margin">{{this.experience}}</p>
 
                         <div>
-                            {{log this}}<button type="submit" class="btn btn-primary update-profile" data-id="{{id}}"
+                            {{log this}}<button type="submit" class="btn update-profile apply-btn" data-id="{{id}}"
                                 data-profile-id="{{@root.profile.id}}">Apply</button>
                         </div>
                         
                     </div>
                     {{/each}}
 
+                    <h5 class="extra-margin text-center" id="someHiddenDiv" style="display: none;">Thank you for applying!</h5>
 
                 </div>
             </div>
@@ -43,6 +50,7 @@
                 const apply = $("button.update-profile");
 
                 apply.on("click", function (event) {
+                    $('#someHiddenDiv').show();
                     event.preventDefault();
 
 
@@ -54,4 +62,3 @@
 
 
         </script>
-
