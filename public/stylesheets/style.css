@@ -42,8 +42,12 @@ footer {
   margin-top: 10px;
 }
 
-.fab {
+.profile-fab {
   color: teal
+}
+
+.footer-fab {
+  color:white 
 }
 
 .owner-info {
@@ -159,7 +163,8 @@ footer {
 .jobpost-btn,
 .apply-btn,
 .view-post-btn,
-.forum-post-btn {
+.forum-post-btn,
+.profile-btn {
     color: white;
     background-color: #01796F;
     padding: 18px; 
@@ -173,7 +178,8 @@ footer {
 .jobpost-btn:hover,
 .apply-btn:hover,
 .view-post-btn:hover,
-.forum-post-btn:hover {
+.forum-post-btn:hover,
+.profile-btn:hover {
   background:#9fd7cd;
 
 }
@@ -222,4 +228,24 @@ footer {
 
 .error-text {
   padding-bottom: 125px;
+}
+
+.footer {
+  background-color: #01796F;
+  padding: 20px;
+}
+
+.manage-jumbo {
+  background-image: url("/graphics/manageprofilebanner.png"); 
+	background-size: cover; 
+  background-repeat: no-repeat; 
+  margin-top: 20px;
+}
+
+.avatar-btn {
+  padding: 10px;
+}
+
+.avatar-btn:hover {
+  background:#9fd7cd
 }
