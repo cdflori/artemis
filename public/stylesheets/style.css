@@ -55,10 +55,9 @@ footer {
 
 .avatar {
   border-radius: 50%;
-  
   padding: 20px;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
 }
 
 .page-top-margin{
@@ -145,4 +144,82 @@ footer {
 .avatar {
   max-width: 200px;
   max-height: 200px;
+}
+
+.login-card {
+  margin-top: 100px;
+}
+
+.signup-card {
+  margin-top: 100px;
+}
+
+.login-btn, 
+.signup-btn,
+.jobpost-btn,
+.apply-btn,
+.view-post-btn,
+.forum-post-btn {
+    color: white;
+    background-color: #01796F;
+    padding: 18px; 
+    border-radius: 15px;
+    max-width: 450px;
+    margin-bottom: 10px;
+}
+
+.login-btn:hover, 
+.signup-btn:hover,
+.jobpost-btn:hover,
+.apply-btn:hover,
+.view-post-btn:hover,
+.forum-post-btn:hover {
+  background:#9fd7cd;
+
+}
+
+.job-post-jumbo {
+  background-image: url("/graphics/jobpostbanner.png"); 
+	background-size: cover; 
+  background-repeat: no-repeat; 
+  margin-top: 20px;
+}
+
+.find-job-jumbotron {
+  background-image: url("/graphics/findjobbanner.png"); 
+	background-size: cover; 
+  background-repeat: no-repeat; 
+  margin-top: 20px;
+}
+
+.job-post-card, .forum-post-card {
+  background-color: #e2e2e2;
+}
+
+.job-post-text, 
+.furriend-text {
+  color: #01796F;
+  font-weight: 1200;
+}
+
+.see-post-jumbotron {
+  background-image: url("/graphics/seepostbanner.png"); 
+	background-size: cover; 
+  background-repeat: no-repeat; 
+  margin-top: 20px;
+}
+
+.match {
+  font-weight: 900;
+}
+
+.error-jumbo {
+  background-image: url("/graphics/errorbanner.png"); 
+	background-size: cover; 
+  background-repeat: no-repeat; 
+  margin-top: 20px;
+}
+
+.error-text {
+  padding-bottom: 125px;
 }
