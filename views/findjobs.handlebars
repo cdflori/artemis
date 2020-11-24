@@ -12,7 +12,7 @@
 
             <div id="job-posts extra-margin">
                 {{#each jobs}}
-                <div class="job-post-card card text-gray mb-3 shadow rounded extra-margin">
+                <div class="job-post-card text-gray mb-3 shadow rounded extra-margin">
                     <div class="card-header">
                         <h3 class="job-post-text extra-margin">{{this.title}}</h3>
                         <br>
@@ -33,12 +33,12 @@
                             {{log this}}<button type="submit" class="btn update-profile apply-btn" data-id="{{id}}"
                                 data-profile-id="{{@root.profile.id}}">Apply</button>
                         </div>
-                        
+
+
                     </div>
                     {{/each}}
-
-                    <h5 class="extra-margin text-center" id="someHiddenDiv" style="display: none;">Thank you for applying!</h5>
-
+                    <h5 class="extra-margin text-center" id="someHiddenDiv" style="display: none;">Thank you for
+                        applying!</h5>
                 </div>
             </div>
 
