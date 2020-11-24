@@ -1,8 +1,6 @@
 {
   "development": {
     "username": "root",
-
-
     "password": "",
 
     "database": "unleash_db",
