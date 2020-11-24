@@ -312,3 +312,12 @@ footer {
 .about-btn-text {
   font-size: 18px;
 }
+
+.mobile-img {
+  margin: auto;
+}
+
+.mobile-container {
+  padding-top: 100px;
+  margin: auto
+}
