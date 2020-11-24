@@ -50,6 +50,9 @@ footer {
   color:white 
 }
 
+.profile-text {
+  font-size: 15pt;
+}
 .owner-info {
   background-color: #9fd7cd;
   padding: 20px;
@@ -59,7 +62,7 @@ footer {
 
 .avatar {
   border-radius: 50%;
-  padding: 20px;
+  padding: 10px;
   width: 300px;
   height: 300px;
 }
@@ -145,17 +148,25 @@ footer {
   padding-bottom: 100px;
 }
 
-.avatar {
+/* .avatar {
   max-width: 200px;
   max-height: 200px;
-}
+} */
 
 .login-card {
-  margin-top: 100px;
+  margin: auto; 
+}
+
+.login-div {
+  padding-top: 100px;
 }
 
 .signup-card {
-  margin-top: 100px;
+  margin: auto;
+}
+
+.signup-div {
+  padding-top: 100px;
 }
 
 .login-btn, 
@@ -164,7 +175,8 @@ footer {
 .apply-btn,
 .view-post-btn,
 .forum-post-btn,
-.profile-btn {
+.profile-btn,
+.about-btn-text {
     color: white;
     background-color: #01796F;
     padding: 18px; 
@@ -179,7 +191,8 @@ footer {
 .apply-btn:hover,
 .view-post-btn:hover,
 .forum-post-btn:hover,
-.profile-btn:hover {
+.profile-btn:hover,
+.about-btn-text:hover {
   background:#9fd7cd;
 
 }
@@ -248,4 +261,54 @@ footer {
 
 .avatar-btn:hover {
   background:#9fd7cd
+}
+
+.applicant-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  float: left;
+  margin-right: 20px;
+}
+
+.applicant-bio {
+  color: grey;
+  font-size: 18px;
+}
+
+.applicant-btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+}
+
+.a-icon {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.about-img {
+  padding: 10px;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.am-row {
+  padding-left: 100px;
+}
+
+.am-col {
+  padding-right: 100px;
+}
+
+.about-btn-text {
+  font-size: 18px;
 }
