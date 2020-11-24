@@ -1,6 +1,6 @@
 {{> navbar user}}
 
-<div class="container-fluid">
+<div class="container-fluid padding-bottom">
     <div class="row extra-margin">
         <div class="col-md-4">
             <div class="text-center">
@@ -8,8 +8,8 @@
 
                 <h3 class="extra-margin">{{profile.petName}}</h3>
                 <span style="font-size: 28px;">
-                    <a href="{{profile.facebook}}" aria-label="Facebook Icon"><i class="fab fa-facebook fa-lg profile-fab"
-                            aria-hidden="true"></i></a>
+                    <a href="{{profile.facebook}}" aria-label="Facebook Icon"><i
+                            class="fab fa-facebook fa-lg profile-fab" aria-hidden="true"></i></a>
                 </span>
 
                 <span style="font-size: 28px;">
@@ -27,18 +27,18 @@
 
         <div class="col-md-8">
             <h3 class="extra-margin"> About {{profile.petName}}</h2>
-                <p class="extra-margin">{{profile.petBio}}</p>
+                <p class="extra-margin profile-text">{{profile.petBio}}</p>
                 <h3>Animal Type</h2>
-                    <p>{{profile.petName}} is a {{profile.animalType}}</p>
-                    <p>{{profile.animalBreed}}</p>
-                    <p>{{profile.age}}</p>
-                    <p>{{profile.gender}}</p>
+                    <p class="profile-text">{{profile.petName}} is a {{profile.animalType}}</p>
+                    <p class="profile-text">Breed: {{profile.animalBreed}}</p>
+                    <p class="profile-text">Age: {{profile.age}}</p>
+                    <p class="profile-text">Gender: {{profile.gender}}</p>
 
                     <h3>Koalafications</h2>
-                        <p>{{profile.qualifications}}</p>
+                        <p class="profile-text">{{profile.qualifications}}</p>
 
                         <h3>Personality</h2>
-                            <p>{{profile.personality}}</p>
+                            <p class="profile-text">{{profile.personality}}</p>
 
                             <div class="owner-info">
                                 <h3>Let's Connect</h3>
@@ -46,8 +46,8 @@
                                 <h5>Owner Name: {{profile.ownerName}}</h5>
                                 <h5>Email: {{profile.ownerEmail}}</h5>
                             </div>
-<br>
-<p class="extra-margin"> Click <a href="/manageprofile">here</a> to manage your profile</p>
+                            <br>
+                            <p class="extra-margin"> Click <a href="/manageprofile">here</a> to manage your profile</p>
 
         </div>
     </div>

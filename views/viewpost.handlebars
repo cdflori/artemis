@@ -1,43 +1,44 @@
 {{> navbar user}}
 
 <div class="container">
-    <div class="row">
+    <div class="row padding-bottom">
         <div class="col-md" id="userposts">
-            <legend>Job Postings</legend>
+            <legend class="extra-margin">Job Postings</legend>
             <div id="job-posts">
                 {{#with job}}
-                <div class="job-post-card card text-white bg-primary mb-3">
+                <div class="job-post-card card mb-3 shadow rounded">
                     <div class="card-header">
-                        <h4 class="text-white">{{title}}</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{description}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{time}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{benefits}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{salary}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{location}}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{experience}}</p>
+                        <h4 class="job-post-text extra-margin">{{title}}</h4>
+                        <p class="extra-margin">{{description}}</p>
+                        <p class="card-text extra-margin">{{time}}</p>
+                        <p class="card-text extra-margin">{{benefits}}</p>
+                        <p class="card-text extra-margin">{{salary}}</p>
+                        <p class="card-text extra-margin">{{location}}</p>
+                        <p class="card-text extra-margin">{{experience}}</p>
                     </div>
                 </div>
                 {{/with}}
             </div>
+            <div class="card-header card mb-3 shadow-sm rounded">
+                <h4 class="text-center">View Your Applicants Below</h4>
+            </div>
             {{#each applicants}}
-            <div>
-                {{"Profile.petName"}}
+            <div class="card applicant-card extra-margin">
+                <img src="{{"Profile.avatar"}}" alt="Profile" style="width:100%">
+                <h1 class="extra-margin">{{"Profile.petName"}}</h1>
+                <p class="applicant-bio">{{"Profile.petBio"}}</p>
+                <p>{{"Profile.petName"}} is a {{"Profile.animalType"}}</p>
+                <p>{{"Profile.animalBreed"}}</p>
+                <p>{{"Profile.age"}} | {{"Profile.gender"}}</p>
+                <div>
+                    <a href={{"Profile.twitter"}}><i class="fab fa-twitter fa-lg profile-fab a-icon"></i></a>
+                    <a href={{"Profile.instagram"}}><i class="fab fa-instagram fa-lg profile-fab a-icon"></i></a>
+                    <a href={{"Profile.facebook"}}><i class="fab fa-facebook fa-lg profile-fab a-icon"></i></a>
+                    <p class="applicant-btn extra-margin">{{"Profile.ownerEmail"}}</p>
+                </div>
             </div>
             {{/each}}
 
         </div>
 
-</div>
-
+    </div>
