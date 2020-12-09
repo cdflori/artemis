@@ -34,6 +34,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(compression());
 
 // Set up handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
