@@ -5,6 +5,7 @@ const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+const compression = require('compression');
 
 // Requiring our routes
 const routes = require("./controllers");
@@ -33,6 +34,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(compression());
 
 // Set up handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
